@@ -1,0 +1,1 @@
+/home/zach2825/PhpstormProjects/purchaseTrackerFull/app/views/teams/index.blade.php
