@@ -16,7 +16,7 @@
 	});
 
 	Route::get('login','UsersController@getLogin');
-	Route::post('login','UsersControler@postLogin');
+	Route::post('login','UsersController@postLogin');
 
 	Route::get('register','UsersController@getRegister');
 	Route::post('register','UsersControler@postRegister');

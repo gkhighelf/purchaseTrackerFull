@@ -28,6 +28,10 @@ class UsersController extends \BaseController {
 		return View::make('users.login');
 	}
 
+	public function postLogin(){
+		dd(Input::all());
+	}
+
 	public function getRegister(){
 		return View::make('users.register');
 	}
