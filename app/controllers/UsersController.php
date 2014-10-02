@@ -29,7 +29,32 @@ class UsersController extends \BaseController {
 	}
 
 	public function postLogin(){
-		dd(Input::all());
+		$_post = Input::all();
+		$rules = User::$rules;
+
+		$validation = Validator::make( $_post, $rules );
+
+		if( $validation->fails()){
+			return Redirrect::back()
+				->withErrors($validation)
+				->withInput(Input::except('password'));
+		}
+
+		//try email
+		if(Auth::attempt(array('email' => $_post['email'], 'password' => $_post['password']))) {
+			return Redirect::to('/')
+				->with('message', 'Welcome');
+		}
+
+		//try username
+		if( Auth::attempt( array( 'username' => $_post['email'], 'password' => $_post['password']))){
+			return Redirect::to('/')
+				->with( 'message', 'Welcome' );
+		}
+
+
+		return Redirrect::back()
+			->withErrors('Bad username/Password');
 	}
 
 	public function getRegister(){
