@@ -2,6 +2,7 @@
 
 @section('content')
 
+{{ Form::open(array('class'=>'smart-form client-form', 'id' => 'login-form')) }}
 <header>
 	Registration is FREE*
 </header>
@@ -73,7 +74,7 @@
 	</section>
 </fieldset>
 <footer>
-	<button type="button" onclick="location.href='{{ URL::to('/') }}" class="btn btn-primary">
+	<button type="button" onclick="location.href='{{ URL::to('/') }}'" class="btn btn-primary">
 		Cancel
 	</button>
 	<button type="submit" class="btn btn-primary">
@@ -87,5 +88,5 @@
 		Thank you for your registration!
 	</p>
 </div>
-
+{{ Form::close() }}
 @stop

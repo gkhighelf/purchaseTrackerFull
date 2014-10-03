@@ -28,32 +28,39 @@ class UsersController extends \BaseController {
 		return View::make('users.login');
 	}
 
+	public function getLogout(){
+		Auth::logout();
+
+		return Redirect::to('/')
+			->with('message', 'Bye');
+	}
+
 	public function postLogin(){
 		$_post = Input::all();
 		$rules = User::$rules;
 
-		$validation = Validator::make( $_post, $rules );
-
-		if( $validation->fails()){
-			return Redirrect::back()
-				->withErrors($validation)
-				->withInput(Input::except('password'));
-		}
+//		$validation = Validator::make( $_post, $rules );
+//
+//		if( $validation->fails()){
+//			return Redirect::back()
+//				->withErrors($validation)
+//				->withInput(Input::except('password'));
+//		}
 
 		//try email
-		if(Auth::attempt(array('email' => $_post['email'], 'password' => $_post['password']))) {
+		if(Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')))){
 			return Redirect::to('/')
 				->with('message', 'Welcome');
 		}
 
 		//try username
-		if( Auth::attempt( array( 'username' => $_post['email'], 'password' => $_post['password']))){
+		if(Auth::attempt(array('username' => Input::get('email'), 'password' => Input::get('password')))){
 			return Redirect::to('/')
-				->with( 'message', 'Welcome' );
+				->with('message', 'Welcome');
 		}
 
-
-		return Redirrect::back()
+		return Redirect::to('login')
+			->withInput(Input::except('password'))
 			->withErrors('Bad username/Password');
 	}
 

@@ -11,4 +11,8 @@ class HomeController extends BaseController {
 		return View::make('users.login');
 	}
 
+	public function index(){
+		return View::make('index');
+	}
+
 }

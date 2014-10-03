@@ -18,7 +18,7 @@
 
 		$user = User::create([
 			'username' => 'admin',
-			'username' => 'admin',
+			'email' => 'admin@admin.com',
 			'password' => Hash::make('admin'),
 			'first_name' => 'admin',
 			'last_name' => 'admin',
