@@ -16,7 +16,7 @@
 
 	<header>
 		<span class="widget-icon"> <i class="fa fa-check txt-color-white"></i> </span>
-		<h2>@section('title')</h2>
+		<h2>@yield('title')</h2>
 		<!-- <div class="widget-toolbar">
 		add: non-hidden - to disable auto hide
 

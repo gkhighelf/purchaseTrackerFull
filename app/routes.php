@@ -13,10 +13,7 @@
 
 	//already logged in
 	Route::group( array( 'before' => 'auth' ), function(){
-		Route::get('/', function ()
-		{
-			return View::make('index');
-		});
+		Route::get('/', 'HomeController@index');
 
 		Route::get('logout', 'UsersController@getLogout');
 	});

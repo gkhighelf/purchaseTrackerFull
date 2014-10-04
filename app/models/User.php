@@ -28,4 +28,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 //		'password' => 'required|min:3',
 	);
 
+	public function teams(){
+		return $this->hasMany('Team');
+	}
+
 }

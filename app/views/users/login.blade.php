@@ -16,7 +16,7 @@
 		<section>
 			<label class="label">E-mail</label>
 			<label class="input"> <i class="icon-append fa fa-user"></i>
-				<input type="text" name="email">
+				<input type="text" name="email" autofocus="true">
 				<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter email address/username</b></label>
 		</section>
 
