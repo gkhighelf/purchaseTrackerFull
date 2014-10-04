@@ -10,22 +10,22 @@
 	| and give it the Closure to execute when that URI is requested.
 	|
 	*/
+	//login
+	Route::get('login', 'UsersController@getLogin');
+	Route::post('login', 'UsersController@postLogin');
+
+	//register
+	Route::get('register', 'UsersController@getRegister');
+	Route::post('register', 'UsersControler@postRegister');
 
 	//already logged in
 	Route::group( array( 'before' => 'auth' ), function(){
 		Route::get('/', 'HomeController@index');
 
 		Route::get('logout', 'UsersController@getLogout');
+
+		//api stuff
+		Route::resource('users', 'UsersController');
+		Route::resource('users.teams', 'UsersController');
+		Route::resource('teams', 'TeamsController');
 	});
-
-	//login
-	Route::get('login','UsersController@getLogin');
-	Route::post('login','UsersController@postLogin');
-
-	//register
-	Route::get('register','UsersController@getRegister');
-	Route::post('register','UsersControler@postRegister');
-
-	//api stuff
-	Route::resource('users', 'UsersController');
-	Route::resource('teams', 'TeamsController');

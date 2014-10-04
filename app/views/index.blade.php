@@ -5,6 +5,5 @@
 @stop
 
 @section('content')
-	{{ $index  }}
-	{{ $create }}
+	page content
 @stop
