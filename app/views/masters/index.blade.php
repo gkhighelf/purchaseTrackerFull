@@ -18,8 +18,9 @@ YOU CAN SET CONFIGURATION VARIABLES HERE BEFORE IT GOES TO NAV, RIBBON, ETC. */
 //you can add your custom css in $page_css array.
 //Note: all css files are inside css/ folder
 $page_css[] = "your_style.css";
-include("inc/header.php");
-
+?>
+@include('masters/header');
+<?php
 //include left panel (navigation)
 //follow the tree in inc/config.ui.php
 include("inc/nav.php");

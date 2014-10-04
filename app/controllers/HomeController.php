@@ -20,4 +20,7 @@ class HomeController extends BaseController {
 			->with('create',$create);
 	}
 
+	public function getSearch(){
+		return View::make('search');
+	}
 }

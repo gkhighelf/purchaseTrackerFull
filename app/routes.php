@@ -20,6 +20,10 @@
 
 	//already logged in
 	Route::group( array( 'before' => 'auth' ), function(){
+
+		Route::get('test', 'HomeController@index');
+		Route::get('search', 'HomeController@getSearch');
+
 		Route::get('/', 'HomeController@index');
 
 		Route::get('logout', 'UsersController@getLogout');

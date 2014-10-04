@@ -1,0 +1,1 @@
+/var/www/purchaseTrackerFull/app/views/settings/edit.blade.php
