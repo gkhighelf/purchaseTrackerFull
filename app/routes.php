@@ -24,7 +24,17 @@
 		Route::get('test', 'HomeController@index');
 		Route::get('search', 'HomeController@getSearch');
 
-		Route::get('/', 'HomeController@index');
+//		Route::get('/', array( 'as' => 'index', 'uses' => 'HomeController@index'));
+		Route::get('index', function(){
+
+			if( Request::ajax() )
+			{
+
+				return View::make('ajax.index');
+			}
+
+			return App::make('HomeController')->index();
+		});
 
 		Route::get('logout', 'UsersController@getLogout');
 

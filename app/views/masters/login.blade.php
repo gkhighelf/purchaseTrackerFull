@@ -61,7 +61,7 @@
 
 			<div id="logo-group">
 
-				<span id="logo"> <img src="{{ URL::to('img/apple-touch-icon-precomposed.png') }}" alt="purchaseTracker" style="height:25px; width: 25px;"> purchaseTracker</span>
+				<span id="logo"> <img src="{{ URL::to('img/purchaseTrackerLogo.png') }}" alt="purchaseTracker" style="height:25px; width: 25px;"> purchaseTracker</span>
 			</div>
 
 			<span id="extr-page-header-space"> <span class="hidden-mobile">Need an account?</span> <a href="{{ URL::to('register') }}" class="btn btn-danger">Create account</a> </span>

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us" <?php echo implode(' ', array_map(function($prop, $value) {
-			return $prop.'="'.$value.'"';
-		}, array_keys($page_html_prop), $page_html_prop)) ;?>>
+<html lang="en-us" >
 	<head>
 		<meta charset="utf-8">
 		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
@@ -27,16 +25,18 @@
 		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
 		<link rel="stylesheet" type="text/css" media="screen" href="{{ URL::to('css/your_style.css') }}"> -->
 
+		@if( isset( $page_css ) && is_array( $page_css ))
 		@foreach($page_css as $css)
 		<link rel="stylesheet" type="text/css" media="screen" href="{{ URL::to('css/' . $css) }}">
 		@endforeach
+		@endif
 
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
 		<link rel="stylesheet" type="text/css" media="screen" href="{{ URL::to('css/demo.min.css') }}">
 
 		<!-- FAVICONS -->
-		<link rel="shortcut icon" href="<?php echo ASSETS_URL; ?>/img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="<?php echo ASSETS_URL; ?>/img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="{{ URL::to('img/favicon/favicon.ico') }}" type="image/x-icon">
+		<link rel="icon" href="{{ URL::to('img/favicon/favicon.ico') }}" type="image/x-icon">
 
 		<!-- GOOGLE FONT -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
@@ -57,21 +57,15 @@
 		<link rel="apple-touch-startup-image" href="{{ URL::to('img/splash/ipad-portrait.png') }}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
 		<link rel="apple-touch-startup-image" href="{{ URL::to('img/splash/iphone.png') }}" media="screen and (max-device-width: 320px)">
 	</head>
-	<body class="fixed-navigation fixed-header fixed-ribbon smart-style-1" <?php echo implode(' ', array_map(function($prop, $value) {
-			return $prop.'="'.$value.'"';
-		}, array_keys($page_body_prop), $page_body_prop)) ;?>>
+	<body class="fixed-navigation fixed-header fixed-ribbon smart-style-1" >
 		<!-- POSSIBLE CLASSES: minified, fixed-ribbon, fixed-header, fixed-width
 			 You can also add different skin classes such as "smart-skin-1", "smart-skin-2" etc...-->
-		<?php
-			if (!$no_main_header) {
-
-		?>
 				<!-- HEADER -->
 				<header id="header">
 					<div id="logo-group">
 
 						<!-- PLACE YOUR LOGO HERE -->
-						<span id="logo"> <img src="{{ URL::to('img/logo.png') }}" alt="SmartAdmin"> </span>
+						<span id="logo" class="fa-inverse"><a href="{{ URL::to('') }}" style="text-decoration: none;"> <img src="{{ URL::to('img/purchaseTrackerLogo.png') }}" alt="SmartAdmin" style="height:25px; width: 25px;"> purchaseTracker</a></span>
 						<!-- END LOGO PLACEHOLDER -->
 
 						<!-- Note: The activity badge color changes when clicked and resets the number to 0
@@ -309,7 +303,3 @@
 					</ul>
 				</div>
 				<!-- END SHORTCUT AREA -->
-
-		<?php
-			}
-		?>

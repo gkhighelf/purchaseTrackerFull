@@ -1,7 +1,9 @@
-@extends('masters.index')
+@extends('masters.nested.index')
+
+
+@section('content')
 <div class="row">
 
-	<div class="col-sm-12">
 
 		<ul id="myTab1" class="nav nav-tabs bordered">
 			<li class="active">
@@ -230,7 +232,7 @@
 				<h1 class="font-md"> Search Results for <span class="semi-bold">Users</span><small class="text-danger"> &nbsp;&nbsp;(181 results)</small></h1>
 				<br>
 				<div class="table-responsive">
-					
+
 					<table id="resultTable" class="table table-striped table-bordered table-hover">
 						<thead>
 							<tr>
@@ -246,7 +248,7 @@
 							</tr>
 						</thead>
 						<tbody>
-	
+
 							<tr>
 								<td><img src="img/avatars/male.png" alt="" width="20"></td><td>Noble</td><td>Saunders</td><td>2002-12-07</td><td>numbers@lipliquid.com <a href="javascript:void(0);" class="pull-right"><i class="fa fa-key"></i></a></td><td>La Puerta</td><td>54076</td><td>558-908-4575</td><td><span class="label label-success">Active</span></td>
 							</tr>
@@ -397,12 +399,12 @@
 							<tr>
 								<td><img src="img/avatars/male.png" alt=""  width="20"></td><td>Clyde</td><td>Hudson</td><td>2008-08-22</td><td>elvia@smilesmoke.info <a href="javascript:void(0);" class="pull-right"><i class="fa fa-key"></i></a></td><td>Sunset</td><td>88755</td><td>561-388-1897</td><td><span class="label label-success">Active</span></td>
 							</tr>
-	
+
 						</tbody>
 					</table>
 
 				</div>
-				
+
 				<div class="text-center">
 					<hr>
 					<ul class="pagination no-margin">
@@ -449,78 +451,7 @@
 			</div>
 		</div>
 
-	</div>
-
 </div>
 
 <!-- end row -->
-
-<script type="text/javascript">
-	/* DO NOT REMOVE : GLOBAL FUNCTIONS!
-	 *
-	 * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
-	 *
-	 * // activate tooltips
-	 * $("[rel=tooltip]").tooltip();
-	 *
-	 * // activate popovers
-	 * $("[rel=popover]").popover();
-	 *
-	 * // activate popovers with hover states
-	 * $("[rel=popover-hover]").popover({ trigger: "hover" });
-	 *
-	 * // activate inline charts
-	 * runAllCharts();
-	 *
-	 * // setup widgets
-	 * setup_widgets_desktop();
-	 *
-	 * // run form elements
-	 * runAllForms();
-	 *
-	 ********************************
-	 *
-	 * pageSetUp() is needed whenever you load a page.
-	 * It initializes and checks for all basic elements of the page
-	 * and makes rendering easier.
-	 *
-	 */
-
-	pageSetUp();
-	
-	/*
-	 * ALL PAGE RELATED SCRIPTS CAN GO BELOW HERE
-	 * eg alert("my home function");
-	 * 
-	 * var pagefunction = function() {
-	 *   ...
-	 * }
-	 * loadScript("js/plugin/_PLUGIN_NAME_.js", pagefunction);
-	 * 
-	 * TO LOAD A SCRIPT:
-	 * var pagefunction = function (){ 
-	 *  loadScript(".../plugin.js", run_after_loaded);	
-	 * }
-	 * 
-	 * OR
-	 * 
-	 * loadScript(".../plugin.js", run_after_loaded);
-	 */
-
-	// PAGE RELATED SCRIPTS
-	
-	// pagefunction
-	
-	var pagefunction = function() {
-		
-		$("#search-project").focus();
-		
-	};
-	
-	// end pagefunction
-	
-	// run pagefunction on load
-
-	pagefunction();
-
-</script>
+@stop

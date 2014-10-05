@@ -78,3 +78,8 @@
 
 	require app_path() . '/filters.php';
 	require app_path() . '/macros.php';
+
+	//smart admin configs
+
+	require app_path() . '/config/smartAdminConfigs.php';
+	require app_path() . '/config/config_ui.php';
