@@ -69,4 +69,4 @@
 
 		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
 		<!-- Voice command : plugin -->
-		<script src="{{ URL::to('js/speech/voicecommand.min.js') }}"></script>		
+		<script src="{{ URL::to('js/speech/voicecommand.min.js') }}"></script>

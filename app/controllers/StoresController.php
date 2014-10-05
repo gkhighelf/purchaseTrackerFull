@@ -10,7 +10,7 @@ class StoresController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('stores.index');
 	}
 
 	/**
@@ -21,7 +21,7 @@ class StoresController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('stores.create');
 	}
 
 	/**

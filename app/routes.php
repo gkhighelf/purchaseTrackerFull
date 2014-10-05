@@ -24,21 +24,26 @@
 		Route::get('test', 'HomeController@index');
 		Route::get('search', 'HomeController@getSearch');
 
+		Route::get('/', function(){
+			return Redirect::to('index');
+		});
 //		Route::get('/', array( 'as' => 'index', 'uses' => 'HomeController@index'));
 		Route::get('index', function(){
 
 			if( Request::ajax() )
 			{
-
 				return View::make('ajax.index');
 			}
 
 			return App::make('HomeController')->index();
 		});
 
+//		Route::get('stores/index', "StoresController@index");
+
 		Route::get('logout', 'UsersController@getLogout');
 
 		//api stuff
+		Route::resource('stores', 'StoresController');
 		Route::resource('users', 'UsersController');
 		Route::resource('users.teams', 'UsersController');
 		Route::resource('teams', 'TeamsController');

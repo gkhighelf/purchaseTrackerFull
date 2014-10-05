@@ -28,6 +28,11 @@
 			"url" => "index",
 			"icon" => "fa-home"
 		),
+		"stores" => array(
+			"title" => "Stores",
+			"url" => "stores",
+			"icon" => "fa-shopping",
+		),
 //	"smartui" => array(
 //		"title" => "Smart UI",
 //		"icon" => "fa-code",

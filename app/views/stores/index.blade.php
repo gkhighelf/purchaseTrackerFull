@@ -1,9 +1,15 @@
 @extends('masters.tilesMenu')
 
 @section('title')
-	stores index
+	stores index page
 @stop
 
 @section('content')
-	stores body
+<section id="widget-grid" class="">
+	<div class="row">
+		stores body
+	</div>
+</section>
+
+
 @stop

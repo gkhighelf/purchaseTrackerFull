@@ -699,15 +699,15 @@
 	 */
 
 	pageSetUp();
-	
+
 	/*
 	 * PAGE RELATED SCRIPTS
 	 */
 
 	// pagefunction
-	
+
 	var pagefunction = function() {
-			
+
 		$(".js-status-update a").click(function () {
 		    var selText = $(this).text();
 		    var $this = $(this);
@@ -715,31 +715,31 @@
 		    $this.parents('.dropdown-menu').find('li').removeClass('active');
 		    $this.parent().addClass('active');
 		});
-		
+
 		/*
 		 * TODO: add a way to add more todo's to list
 		 */
-		
+
 		// initialize sortable
-		
+
 	    $("#sortable1, #sortable2").sortable({
 	        handle: '.handle',
 	        connectWith: ".todo",
 	        update: countTasks
 	    }).disableSelection();
-		
-		
+
+
 		// check and uncheck
 		$('.todo .checkbox > input[type="checkbox"]').click(function () {
 		    var $this = $(this).parent().parent().parent();
-		
+
 		    if ($(this).prop('checked')) {
 		        $this.addClass("complete");
-		
+
 		        // remove this if you want to undo a check list once checked
 		        //$(this).attr("disabled", true);
 		        $(this).parent().hide();
-		
+
 		        // once clicked - add class, copy to memory then remove and add to sortable3
 		        $this.slideUp(500, function () {
 		            $this.clone().prependTo("#sortable3").effect("highlight", {}, 800);
@@ -749,16 +749,16 @@
 		    } else {
 		        // insert undo code here...
 		    }
-		
+
 		})
 		// count tasks
 		function countTasks() {
-		
+
 		    $('.todo-group-title').each(function () {
 		        var $this = $(this);
 		        $this.find(".num-of-tasks").text($this.next().find("li").size());
 		    });
-		
+
 		}
 
 		/*
@@ -864,7 +864,7 @@
 		/*
 		 * VECTOR MAP
 		 */
-		
+
 		data_array = {
 		    "US": 4977,
 		    "AU": 4873,
@@ -875,15 +875,15 @@
 		    "CA": 134,
 		    "BD": 100
 		};
-		
+
 		// Load Map dependency 1 then call for dependency 2
 		loadScript("js/plugin/vectormap/jquery-jvectormap-1.2.2.min.js", loadMapFile);
-		
+
 		// Load Map dependency 2 then rendeder Map
 		function loadMapFile() {
 		    loadScript("js/plugin/vectormap/jquery-jvectormap-world-mill-en.js", renderVectorMap);
 		}
-		
+
 		function renderVectorMap() {
 		    $('#vector-map').vectorMap({
 		        map: 'world_mill_en',
@@ -913,37 +913,37 @@
 		        }
 		    });
 		}
-		
+
 		/*
 		 * FULL CALENDAR JS
 		 */
-		
+
 		// Load Calendar dependency then setup calendar
 		loadScript("js/plugin/fullcalendar/jquery.fullcalendar.min.js", setupCalendar);
-		
+
 		function setupCalendar() {
-		
+
 		    if ($("#calendar").length) {
 		        var date = new Date();
 		        var d = date.getDate();
 		        var m = date.getMonth();
 		        var y = date.getFullYear();
-		
+
 		        var calendar = $('#calendar').fullCalendar({
-		
+
 		            editable: true,
 		            draggable: true,
 		            selectable: false,
 		            selectHelper: true,
 		            unselectAuto: false,
 		            disableResizing: false,
-		
+
 		            header: {
 		                left: 'title', //,today
 		                center: 'prev, next, today',
 		                right: 'month, agendaWeek, agenDay' //month, agendaDay,
 		            },
-		
+
 		            select: function (start, end, allDay) {
 		                var title = prompt('Event Title:');
 		                if (title) {
@@ -957,7 +957,7 @@
 		                }
 		                calendar.fullCalendar('unselect');
 		            },
-		
+
 		            events: [{
 		                title: 'All Day Event',
 		                start: new Date(y, m, 1),
@@ -1007,7 +1007,7 @@
 		                end: new Date(y, m, 29),
 		                className: ["event", "bg-color-darken"]
 		            }],
-		
+
 		            eventRender: function (event, element, icon) {
 		                if (!event.description == "") {
 		                    element.find('.fc-event-title').append("<br/><span class='ultra-light'>" + event.description +
@@ -1019,69 +1019,69 @@
 		                }
 		            }
 		        });
-		
+
 		    };
-		
+
 		    /* hide default buttons */
 		    $('.fc-header-right, .fc-header-center').hide();
-		
+
 		}
-		
+
 		// calendar prev
 		$('#calendar-buttons #btn-prev').click(function () {
 		    $('.fc-button-prev').click();
 		    return false;
 		});
-		
+
 		// calendar next
 		$('#calendar-buttons #btn-next').click(function () {
 		    $('.fc-button-next').click();
 		    return false;
 		});
-		
+
 		// calendar today
 		$('#calendar-buttons #btn-today').click(function () {
 		    $('.fc-button-today').click();
 		    return false;
 		});
-		
+
 		// calendar month
 		$('#mt').click(function () {
 		    $('#calendar').fullCalendar('changeView', 'month');
 		});
-		
+
 		// calendar agenda week
 		$('#ag').click(function () {
 		    $('#calendar').fullCalendar('changeView', 'agendaWeek');
 		});
-		
+
 		// calendar agenda day
 		$('#td').click(function () {
 		    $('#calendar').fullCalendar('changeView', 'agendaDay');
 		});
-		
+
 		/*
 		 * CHAT
 		 */
-		
+
 		$.filter_input = $('#filter-chat-list');
 		$.chat_users_container = $('#chat-container > .chat-list-body')
 		$.chat_users = $('#chat-users')
 		$.chat_list_btn = $('#chat-container > .chat-list-open-close');
 		$.chat_body = $('#chat-body');
-		
+
 		/*
 		 * LIST FILTER (CHAT)
 		 */
-		
+
 		// custom css expression for a case-insensitive contains()
 		jQuery.expr[':'].Contains = function (a, i, m) {
 		    return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
 		};
-		
+
 		function listFilter(list) { // header is any element, list is an unordered list
 		    // create and add the filter form to the header
-		
+
 		    $.filter_input.change(function () {
 		        var filter = $(this).val();
 		        if (filter) {
@@ -1096,29 +1096,29 @@
 		    }).keyup(function () {
 		        // fire the above change event after every letter
 		        $(this).change();
-		
+
 		    });
-		
+
 		}
-		
+
 		// on dom ready
 		listFilter($.chat_users);
-		
+
 		// open chat list
 		$.chat_list_btn.click(function () {
 		    $(this).parent('#chat-container').toggleClass('open');
 		})
-		
+
 		$.chat_body.animate({
 		    scrollTop: $.chat_body[0].scrollHeight
 		}, 500);
-	
+
 	};
-	
+
 	// end pagefunction
-	
+
 	// run pagefunction on load
 	pagefunction();
-	
-	
+
+
 </script>
