@@ -1,18 +1,27 @@
-@include('masters.header')
-@include('masters.nav')
+@include('masters.wrappers.header')
+@include('masters.wrappers.nav')
 
 <!-- MAIN PANEL -->
 <div id="main" role="main">
-	@include('masters.ribbon')
+	@include('masters.wrappers.ribbon')
 
 	<!-- MAIN CONTENT -->
 	<div id="content">
-		@yield('content')
+		<!-- widget grid -->
+		<section id="widget-grid" class="">
+
+			<!-- row -->
+			<div class="row">
+			this is page content
+				@yield('content')
+			</div>
+		</section>
 	</div>
 	<!-- END MAIN CONTENT -->
-	
+
 </div>
 <!-- END MAIN PANEL -->
 
 @include('masters.scripts.scripts')
-@include('masters.footer')
+{{ HTML::script('js/ajax.functions.js') }}
+@include('masters.wrappers.footer')

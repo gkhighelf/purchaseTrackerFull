@@ -12,12 +12,7 @@ class HomeController extends BaseController {
 	}
 
 	public function index(){
-		$index = View::make('stores.index' )->render();
-		$create= View::make('stores.create')->render();
-
-		return View::make('index')
-			->with('index', $index )
-			->with('create',$create);
+		return View::make('masters.index');
 	}
 
 	public function getSearch(){

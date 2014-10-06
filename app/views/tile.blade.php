@@ -1,9 +1,9 @@
 @extends('masters.tilesMenu')
 
 @section('title')
-	{{ $id or 'createStore' }}
+	{{ $title or 'Welcome' }}
 @stop
 
 @section('content')
-		{{ $content or 'content page' }}
+	{{ $content or '' }}
 @stop

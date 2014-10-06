@@ -10,7 +10,21 @@ class StoresController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('stores.index');
+		$tiles = array();
+
+		$tiles[] = View::make('tile',array(
+			'id' => 'storeIndex',
+			'title' => 'random title',
+			'content' => 'random content',
+		))->render();
+
+		$tiles[] = View::make('tile',array(
+			'id' => 'teamIndex',
+			'title' => 'random team title',
+			'content' => 'random team content',
+		))->render();
+
+		return implode('', $tiles);
 	}
 
 	/**

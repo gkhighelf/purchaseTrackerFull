@@ -1,1 +1,9 @@
-/home/zach2825/PhpstormProjects/purchaseTrackerFull/app/views/teams/index.blade.php
+@extends('masters.tilesMenu')
+
+@section('title')
+	{{ $title or 'teams' }}
+@stop
+
+@section('content')
+	{{ $content or '' }}
+@stop

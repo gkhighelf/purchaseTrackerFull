@@ -27,7 +27,7 @@
 		Route::get('/', function(){
 			return Redirect::to('index');
 		});
-//		Route::get('/', array( 'as' => 'index', 'uses' => 'HomeController@index'));
+
 		Route::get('index', function(){
 
 			if( Request::ajax() )
